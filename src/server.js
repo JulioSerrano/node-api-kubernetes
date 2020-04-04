@@ -30,8 +30,11 @@ app.get('/persons/:id', (req, res) => {
 app.post('/persons', (req, res) => {
   knex('persons')
   .insert({
-    title: req.body.title,
-    completed: false
+    rut: req.body.rut,
+    age: req.body.age,
+    name: req.body.name,
+    course: req.body.course,
+    lastName: req.body.lastName
   })
   .then(() => { res.json('Person added!'); })
   .catch(() => { res.json('Something went wrong.') });
@@ -41,8 +44,11 @@ app.put('/persons/:id', (req, res) => {
   knex('persons')
   .where({ id: parseInt(req.params.id) })
   .update({
-    title: req.body.title,
-    completed: req.body.completed
+    rut: req.body.rut,
+    age: req.body.age,
+    name: req.body.name,
+    course: req.body.course,
+    lastName: req.body.lastName
   })
   .then(() => { res.json('Person updated!'); })
   .catch(() => { res.json('Something went wrong.') });
