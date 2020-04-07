@@ -8,15 +8,15 @@ const PORT = process.env.PORT || 3000;
 const knex = require("./db/knex");
 
 app.use(basicAuth({
-  users: { 'admin': 'supersecret' }
-}))
+  users: { 'admin': process.env.PASSWORD }
+}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.get("/", (req, res) => {
-  res.json("pong!");
+  res.json("hello world!");
 });
 
 app.get("/people", (req, res) => {

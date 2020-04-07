@@ -9,6 +9,7 @@ services:
       - PORT=3000
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - PASSWORD=secret
     ports:
       - 3000:3000
     depends_on:
