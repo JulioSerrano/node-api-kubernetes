@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: gcr.io/modern-force-273323/node-kubernetes:v0.0.1 # update
+        image: gcr.io/modern-force-273323/node-kubernetes:v0.0.2 # update
         env:
         - name: NODE_ENV
           value: "development"
@@ -25,6 +25,11 @@ spec:
               name: postgres-credentials
               key: user
         - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-credentials
+              key: postgres-password
+        - name: PASSWORD
           valueFrom:
             secretKeyRef:
               name: postgres-credentials
