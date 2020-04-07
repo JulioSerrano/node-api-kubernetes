@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   res.json("pong!");
 });
 
-app.get("/persons", (req, res) => {
+app.get("/people", (req, res) => {
   knex("persons")
     .then((data) => {
       res.json(data);
@@ -29,7 +29,7 @@ app.get("/persons", (req, res) => {
     });
 });
 
-app.get("/persons/:id", (req, res) => {
+app.get("/people/:id", (req, res) => {
   knex("persons")
     .where({ id: parseInt(req.params.id) })
     .then((data) => {
@@ -40,7 +40,7 @@ app.get("/persons/:id", (req, res) => {
     });
 });
 
-app.post("/persons", (req, res) => {
+app.post("/people", (req, res) => {
   knex("persons")
     .insert({
       rut: req.body.rut,
@@ -57,7 +57,7 @@ app.post("/persons", (req, res) => {
     });
 });
 
-app.put("/persons/:id", (req, res) => {
+app.put("/people/:id", (req, res) => {
   knex("persons")
     .where({ id: parseInt(req.params.id) })
     .update({
@@ -75,7 +75,7 @@ app.put("/persons/:id", (req, res) => {
     });
 });
 
-app.delete("/persons/:id", (req, res) => {
+app.delete("/people/:id", (req, res) => {
   knex("persons")
     .where({ id: parseInt(req.params.id) })
     .del()
