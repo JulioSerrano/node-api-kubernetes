@@ -50,7 +50,7 @@ app.post("/people", (req, res) => {
       lastName: req.body.lastName,
     })
     .then(() => {
-      res.json("Person added!");
+      res.status(201).json("Person added!");
     })
     .catch(() => {
       res.json("Something went wrong.");
