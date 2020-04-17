@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: gcr.io/modern-force-273323/node-kubernetes:v0.0.2 # update
+        image: gcr.io/modern-force-273323/node-kubernetes:v0.0.3 # update
         env:
         - name: NODE_ENV
           value: "development"
