@@ -32,15 +32,36 @@ PUT localhost:3000/people/:id
 POST localhost:3000/people
 DELETE localhost:3000/people/:id
 ```
-Or visit link in apigee:
+
+For automated test with mocha run:
+```bash
+docker-compose -f docker-compose.test.yml build
+docker-compose -f docker-compose.test.yml up
+```
+The tests applied are: 
+```bash
+1 - Create person
+2 - Get all persons
+3 - Get one person with id 1
+4 - Update a person with id 1
+5 - Delete a person with id 1
+6 - Create person with incorrect params
+7 - Get one person with id 1 after deleted
+8 - Delete a person with id 1 after deleted
+```
+
+Or test with link of apigee:
 ```bash
 https://julioserrano-eval-test.apigee.net/people
 ```
 
-
 Auth credentials, using Basic auth header:
-
 ```bash
 user: admin
 password: secret
 ```
+
+
+
+
+
